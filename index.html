@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<!--
+	Monochromed by TEMPLATEDr
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>콜로세움</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-panels.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel-noscript.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</noscript>
+	<style>
+		/* ===== Actual Styles ===== */
+
+		/* ===== Horizontal Rule ===== */
+		.rule {
+			margin: 10px 0;
+			border: none;
+			height: 1.5px;
+			background-image: linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+		}
+
+		/* ===== Select Box ===== */
+		.sel {
+			font-size: 1rem;
+			display: inline-block;
+			margin: 3em 2em;
+			width: 350px;
+			background-color: transparent;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.sel::before {
+			position: absolute;
+			content: '\f063';
+			font-family: 'FontAwesome';
+			font-size: 2em;
+			color: #FFF;
+			right: 20px;
+			top: calc(50% - 0.5em);
+		}
+
+		.sel.active::before {
+			transform: rotateX(-180deg);
+		}
+
+		.sel__placeholder {
+			display: block;
+			font-family: 'Quicksand';
+			font-size: 2.3em;
+			color: #838e95;
+			padding: 0.2em 0.5em;
+			text-align: left;
+			pointer-events: none;
+			user-select: none;
+			visibility: visible;
+		}
+
+		.sel.active .sel__placeholder {
+			visibility: hidden;
+		}
+
+		.sel__placeholder::before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 0.2em 0.5em;
+			content: attr(data-placeholder);
+			visibility: hidden;
+		}
+
+		.sel.active .sel__placeholder::before {
+			visibility: visible;
+		}
+
+		.sel__box {
+			position: absolute;
+			top: calc(100% + 4px);
+			left: -4px;
+			display: none;
+			list-style-type: none;
+			text-align: left;
+			font-size: 1em;
+			background-color: #FFF;
+			width: calc(100% + 8px);
+			box-sizing: border-box;
+		}
+
+		.sel.active .sel__box {
+			display: block;
+			animation: fadeInUp 500ms;
+		}
+
+		.sel__box__options {
+			display: list-item;
+			font-family: 'Quicksand';
+			font-size: 1.5em;
+			color: #838e95;
+			padding: 0.5em 1em;
+			user-select: none;
+		}
+
+		.sel__box__options::after {
+			content: '\f00c';
+			font-family: 'FontAwesome';
+			font-size: 0.5em;
+			margin-left: 5px;
+			display: none;
+		}
+
+		.sel__box__options.selected::after {
+			display: inline;
+		}
+
+		.sel__box__options:hover {
+			background-color: #ebedef;
+		}
+
+		/* ----- Select Box Black Panther ----- */
+		.sel {
+			border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+		}
+
+		.sel--black-panther {
+			z-index: 3;
+		}
+
+		/* ----- Select Box Superman ----- */
+		.sel--superman {
+			/*   display: none; */
+			z-index: 2;
+		}
+
+		/* ===== Keyframes ===== */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translate3d(0, 20px, 0);
+			}
+
+			to {
+				opacity: 1;
+				transform: none;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+
+		}
+	</style>
+</head>
+
+<body class="homepage">
+
+	<!-- Header -->
+	<div id="header">
+		<div class="container">
+
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#">콜로세움</a></h1>
+				<span>천하제일 토론대회</span>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li class="active"><a href="index.html">콜로세움</a></li>
+					<li><a href="threecolumn.html">콜로세움 소개하기</a></li>
+					<li><a href="twocolumn1.html">토론게시판</a></li>
+					<li><a href="twocolumn2.html">로그인</a></li>
+					<li><a href="onecolumn.html">회원가입</a></li>
+				</ul>
+			</nav>
+
+		</div>
+	</div>
+	<!-- Header -->
+	<!-- Main -->
+	<div id="main">
+		<div class="container" style=" background-color: white;">
+			<div class="sel sel--black-panther">
+				<select name="select-profession" id="select-profession">
+					<option value="" disabled>주제</option>
+					<option value="hacker">19</option>
+					<option value="gamer">병맛</option>
+					<option value="developer">잡다한것</option>
+					<option value="programmer">사회과학</option>
+					<option value="designer">순수재미</option>
+				</select>
+			</div>
+	
+			<hr class="rule">
+		</div>
+
+		<div class="container">
+			<header>
+				<h2>토론주제</h2>
+			</header>
+			<div class="row">
+				<div class="3u">
+					<section>
+						<a href="#" class="image full"><img src="images/토마토.jpeg" alt="" width="200" height="200" /></a>
+						<p>토맛 토마토 vs 토마토맛토</p>
+
+						<p>추천수 : 233</p>
+						<a href="discussion.html" class="button">토론ㄱㄱ?</a>
+					</section>
+				</div>
+				<div class="3u">
+					<section>
+						<a href="#" class="image full"><img src="images/아이폰갤럭시.jpg" alt="" width="200"
+								height="200" /></a>
+						<p>아이폰 vs 갤럭시</p>
+						<p>추천수 : 94</p>
+						<a href="#" class="button">토론ㄱㄱ?</a>
+					</section>
+				</div>
+				<div class="3u">
+					<section>
+						<a href="#" class="image full"><img src="images/재입대.jpg" alt="" width="200" height="200" /></a>
+						<p>2억받고 재입대 vs 그냥 살기</p>
+						<p>추천수 : 57</p>
+
+						<a href="discussion.html" class="button">토론ㄱㄱ?</a>
+					</section>
+				</div>
+				
+			
+				<div class="3u">
+					<section>
+						<a href="#" class="image full"><img src="images/키.jpg" alt="" width="200" height="200" /></a>
+
+						<p>키작남(165) vs 키졸라큰남(190cm)</p>
+
+						<p>추천수 : 22</p>
+						<a href="#" class="button">토론ㄱㄱ?</a>
+					</section>
+				</div>
+			</div>
+			<div class="divider">&nbsp;</div>
+			<div class="row">
+
+			</div>
+
+		</div>
+	</div>
+	<!-- Main -->
+				<!-- Copyright -->
+			<div id="copyright">
+			<div class="container">
+			<p>멋사: 아이디어톤 (이기정,한예진,서진영)</p>
+			</div>
+		</div>
+
+		<script>
+					/* ===== Logic for creating fake Select Boxes ===== */
+					$('.sel').each(function () {
+						$(this).children('select').css('display', 'none');
+
+						var $current = $(this);
+
+						$(this).find('option').each(function (i) {
+							if (i == 0) {
+								$current.prepend($('<div>', {
+									class: $current.attr('class').replace(/sel/g, 'sel__box')
+								}));
+
+								var placeholder = $(this).text();
+								$current.prepend($('<span>', {
+									class: $current.attr('class').replace(/sel/g, 'sel__placeholder'),
+									text: placeholder,
+									'data-placeholder': placeholder
+								}));
+
+								return;
+							}
+
+							$current.children('div').append($('<span>', {
+								class: $current.attr('class').replace(/sel/g, 'sel__box__options'),
+								text: $(this).text()
+							}));
+						});
+					});
+
+					// Toggling the `.active` state on the `.sel`.
+					$('.sel').click(function () {
+						$(this).toggleClass('active');
+					});
+
+					// Toggling the `.selected` state on the options.
+					$('.sel__box__options').click(function () {
+						var txt = $(this).text();
+						var index = $(this).index();
+
+						$(this).siblings('.sel__box__options').removeClass('selected');
+						$(this).addClass('selected');
+
+						var $currentSel = $(this).closest('.sel');
+						$currentSel.children('.sel__placeholder').text(txt);
+						$currentSel.children('select').prop('selectedIndex', index + 1);
+					});
+
+	</script>
+</body>
+
+</html>
